@@ -1,6 +1,9 @@
 name: Build plugin zip
 
 on:
+  push:
+    tags:
+      - 'v*'
   release:
     types: [published]
   workflow_dispatch:
@@ -26,6 +29,17 @@ jobs:
           name: free-support-chat-widget-by-brane
           path: dist/free-support-chat-widget-by-brane.zip
 
+      # Pushing a v* tag publishes the release, with the zip attached.
+      - name: Create the release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" dist/free-support-chat-widget-by-brane.zip \
+            --title "Free Support Chat Widget by Brane ${{ github.ref_name }}" \
+            --notes "Download free-support-chat-widget-by-brane.zip below, then in WordPress go to Plugins > Add New Plugin > Upload Plugin."
+
+      # A release published by hand gets the zip attached.
       - name: Attach zip to the release
         if: github.event_name == 'release'
         env:
