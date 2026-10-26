@@ -3,7 +3,7 @@
  * Plugin Name:       Free Support Chat Widget by Brane
  * Plugin URI:        https://github.com/brane-labs/free-support-chat-widget-wordpress
  * Description:       A free live support chat widget. Visitors message you from any page and you answer from the Brane app on your phone, with instant notifications.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Brane Labs
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BFSCW_VERSION', '1.0.1' );
+define( 'BFSCW_VERSION', '1.0.2' );
 define( 'BFSCW_FILE', __FILE__ );
 define( 'BFSCW_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BFSCW_URL', plugin_dir_url( __FILE__ ) );
@@ -56,7 +56,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'bfscw_action_
  */
 function bfscw_purge_page_caches() {
 	// LiteSpeed Cache.
-	do_action( 'litespeed_purge_all' );
+	do_action( 'litespeed_purge_all' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- LiteSpeed Cache's own purge hook.
 	// WP Rocket.
 	if ( function_exists( 'rocket_clean_domain' ) ) {
 		rocket_clean_domain();
@@ -74,7 +74,7 @@ function bfscw_purge_page_caches() {
 		sg_cachepress_purge_cache();
 	}
 	// Cache Enabler.
-	do_action( 'cache_enabler_clear_complete_cache' );
+	do_action( 'cache_enabler_clear_complete_cache' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Cache Enabler's own purge hook.
 }
 add_action( 'add_option_' . BFSCW_Settings::OPTION, 'bfscw_purge_page_caches' );
 add_action( 'update_option_' . BFSCW_Settings::OPTION, 'bfscw_purge_page_caches' );
