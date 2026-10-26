@@ -7,6 +7,10 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Version to release, for example v1.0.2. Leave empty to only build the zip.
+        required: false
 
 permissions:
   contents: write
@@ -29,14 +33,17 @@ jobs:
           name: free-support-chat-widget-by-brane
           path: dist/free-support-chat-widget-by-brane.zip
 
-      # Pushing a v* tag publishes the release, with the zip attached.
+      # Pushing a v* tag, or running this by hand with a version, publishes the
+      # release with the zip attached.
       - name: Create the release
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || inputs.tag != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.tag }}
         run: |
-          gh release create "${{ github.ref_name }}" dist/free-support-chat-widget-by-brane.zip \
-            --title "Free Support Chat Widget by Brane ${{ github.ref_name }}" \
+          gh release create "$TAG" dist/free-support-chat-widget-by-brane.zip \
+            --target "${{ github.sha }}" \
+            --title "Free Support Chat Widget by Brane $TAG" \
             --notes "Download free-support-chat-widget-by-brane.zip below, then in WordPress go to Plugins > Add New Plugin > Upload Plugin."
 
       # A release published by hand gets the zip attached.
