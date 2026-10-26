@@ -33,7 +33,7 @@ Free Support Chat Widget by Brane is a lightweight WordPress live chat plugin ma
 
 ### 1. Download the zip
 
-Go to the [latest release](https://github.com/brane-labs/free-support-chat-widget-wordpress/releases/latest) and download **`free-support-chat-widget-by-brane.zip`** under **Assets**.
+Go to the [latest release](https://github.com/brane-labs/free-support-chat-widget-wordpress/releases/latest) and download **`free-support-chat-widget.zip`** under **Assets**.
 
 > Use the release zip rather than GitHub's green **Code > Download ZIP** button. The release zip has the right folder name, so future updates install over it cleanly.
 
@@ -42,7 +42,7 @@ Go to the [latest release](https://github.com/brane-labs/free-support-chat-widge
 1. Log in to your WordPress dashboard.
 2. Go to **Plugins > Add New Plugin**.
 3. Click **Upload Plugin** at the top of the page.
-4. Choose `free-support-chat-widget-by-brane.zip` and click **Install Now**.
+4. Choose `free-support-chat-widget.zip` and click **Install Now**.
 5. Click **Activate Plugin**.
 
 You will now see a **Brane** menu in the WordPress sidebar.
@@ -61,7 +61,7 @@ That is it. Visit your site and the support chat is there.
 
 ### Installing by FTP
 
-Unzip the file and upload the `free-support-chat-widget-by-brane` folder to `/wp-content/plugins/`, then activate it on the **Plugins** screen.
+Unzip the file and upload the `free-support-chat-widget` folder to `/wp-content/plugins/`, then activate it on the **Plugins** screen.
 
 ## Embed the chat in a page
 
@@ -149,7 +149,7 @@ While the floating chat is on, your pages load the chat from `embed.brane.chat` 
 ./bin/build-zip.sh
 ```
 
-The installable zip is written to `dist/free-support-chat-widget-by-brane.zip`. Publishing a GitHub release builds the same zip and attaches it automatically.
+The installable zip is written to `dist/free-support-chat-widget.zip`. Publishing a GitHub release builds the same zip and attaches it automatically.
 
 ## License
 

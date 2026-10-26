@@ -132,7 +132,7 @@ class BFSCW_Frontend {
 	public static function shortcode( $atts ) {
 		$atts = shortcode_atts(
 			array(
-				'text'  => __( 'Chat with us', 'free-support-chat-widget-by-brane' ),
+				'text'  => __( 'Chat with us', 'free-support-chat-widget' ),
 				'class' => '',
 			),
 			$atts,
@@ -228,7 +228,7 @@ class BFSCW_Frontend {
 		return sprintf(
 			'<div class="brane-chat-embed" style="width:100%%;max-width:100%%;"><iframe src="%1$s" title="%2$s" style="display:block;width:100%%;height:%3$s;border:0;border-radius:12px;background:%4$s;" allow="clipboard-write; autoplay" loading="lazy"></iframe></div>',
 			esc_url( self::embed_url( $settings, $origin ) ),
-			esc_attr__( 'Chat with us', 'free-support-chat-widget-by-brane' ),
+			esc_attr__( 'Chat with us', 'free-support-chat-widget' ),
 			esc_attr( self::clean_height( $atts['height'] ) ),
 			'dark' === $settings['theme'] ? '#202124' : '#e9ecf0'
 		);

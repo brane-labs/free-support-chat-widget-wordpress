@@ -30,8 +30,8 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: free-support-chat-widget-by-brane
-          path: dist/free-support-chat-widget-by-brane.zip
+          name: free-support-chat-widget
+          path: dist/free-support-chat-widget.zip
 
       # Pushing a v* tag, or running this by hand with a version, publishes the
       # release with the zip attached.
@@ -41,14 +41,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.tag }}
         run: |
-          gh release create "$TAG" dist/free-support-chat-widget-by-brane.zip \
+          gh release create "$TAG" dist/free-support-chat-widget.zip \
             --target "${{ github.sha }}" \
             --title "Free Support Chat Widget by Brane $TAG" \
-            --notes "Download free-support-chat-widget-by-brane.zip below, then in WordPress go to Plugins > Add New Plugin > Upload Plugin."
+            --notes "Download free-support-chat-widget.zip below, then in WordPress go to Plugins > Add New Plugin > Upload Plugin."
 
       # A release published by hand gets the zip attached.
       - name: Attach zip to the release
         if: github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "${{ github.event.release.tag_name }}" dist/free-support-chat-widget-by-brane.zip --clobber
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/free-support-chat-widget.zip --clobber

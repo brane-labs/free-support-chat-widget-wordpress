@@ -4,7 +4,7 @@ Tags: live chat, support chat, chat widget, customer support, contact form
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,7 +73,7 @@ No data is sent to Brane while the floating chat is switched off and no page car
 
 = From your WordPress dashboard =
 
-1. Download `free-support-chat-widget-by-brane.zip` from the latest release at https://github.com/brane-labs/free-support-chat-widget-wordpress/releases
+1. Download `free-support-chat-widget.zip` from the latest release at https://github.com/brane-labs/free-support-chat-widget-wordpress/releases
 2. Go to **Plugins > Add New Plugin > Upload Plugin**.
 3. Choose the zip, click **Install Now**, then **Activate**.
 4. Open **Brane > Support Chat** in the dashboard menu and follow the steps.
@@ -81,7 +81,7 @@ No data is sent to Brane while the floating chat is switched off and no page car
 = By FTP =
 
 1. Unzip the file.
-2. Upload the `free-support-chat-widget-by-brane` folder to `/wp-content/plugins/`.
+2. Upload the `free-support-chat-widget` folder to `/wp-content/plugins/`.
 3. Activate the plugin on the **Plugins** screen.
 
 == Frequently Asked Questions ==
@@ -133,6 +133,9 @@ It adds one script to the footer of every page, which works with any theme or bu
 
 == Changelog ==
 
+= 1.0.3 =
+* The plugin's slug and text domain are now free-support-chat-widget, to match the WordPress.org plugin directory.
+
 = 1.0.2 =
 * Plugin Check clean: the cache plugin hooks the chat calls are marked as theirs.
 
@@ -146,6 +149,9 @@ It adds one script to the footer of every page, which works with any theme or bu
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+New plugin folder name. If you installed an earlier zip by hand, deactivate the old copy before activating this one. Your settings carry over.
 
 = 1.0.2 =
 No change to how the chat works.

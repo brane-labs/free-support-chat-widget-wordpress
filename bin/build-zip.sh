@@ -2,7 +2,7 @@
 # Builds an installable plugin zip in dist/.
 set -euo pipefail
 
-SLUG="free-support-chat-widget-by-brane"
+SLUG="free-support-chat-widget"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT

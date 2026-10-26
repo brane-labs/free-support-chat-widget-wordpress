@@ -121,7 +121,7 @@ class BFSCW_Settings {
 			add_settings_error(
 				self::OPTION,
 				'bfscw_username_required',
-				__( 'Add your Brane username before switching the chat on.', 'free-support-chat-widget-by-brane' )
+				__( 'Add your Brane username before switching the chat on.', 'free-support-chat-widget' )
 			);
 		}
 

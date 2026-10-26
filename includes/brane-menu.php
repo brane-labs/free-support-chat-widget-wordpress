@@ -57,8 +57,8 @@ if ( ! function_exists( 'brane_labs_register_menu' ) ) {
 		}
 
 		add_menu_page(
-			__( 'Brane', 'free-support-chat-widget-by-brane' ),
-			__( 'Brane', 'free-support-chat-widget-by-brane' ),
+			__( 'Brane', 'free-support-chat-widget' ),
+			__( 'Brane', 'free-support-chat-widget' ),
 			'manage_options',
 			BRANE_LABS_MENU_SLUG,
 			'brane_labs_render_overview',
@@ -69,8 +69,8 @@ if ( ! function_exists( 'brane_labs_register_menu' ) ) {
 		// Renames the automatic first submenu entry from "Brane" to "Overview".
 		add_submenu_page(
 			BRANE_LABS_MENU_SLUG,
-			__( 'Brane', 'free-support-chat-widget-by-brane' ),
-			__( 'Overview', 'free-support-chat-widget-by-brane' ),
+			__( 'Brane', 'free-support-chat-widget' ),
+			__( 'Overview', 'free-support-chat-widget' ),
 			'manage_options',
 			BRANE_LABS_MENU_SLUG,
 			'brane_labs_render_overview'
@@ -97,8 +97,8 @@ if ( ! function_exists( 'brane_labs_render_overview' ) ) {
 		$links = brane_labs_app_links();
 		?>
 		<div class="wrap brane-labs-overview">
-			<h1><?php esc_html_e( 'Brane', 'free-support-chat-widget-by-brane' ); ?></h1>
-			<p><?php esc_html_e( 'Tools from Brane Labs for talking to the people who visit your site.', 'free-support-chat-widget-by-brane' ); ?></p>
+			<h1><?php esc_html_e( 'Brane', 'free-support-chat-widget' ); ?></h1>
+			<p><?php esc_html_e( 'Tools from Brane Labs for talking to the people who visit your site.', 'free-support-chat-widget' ); ?></p>
 
 			<div class="brane-labs-cards">
 				<?php foreach ( $items as $item ) : ?>
@@ -108,16 +108,16 @@ if ( ! function_exists( 'brane_labs_render_overview' ) ) {
 							<p class="brane-labs-status"><?php echo esc_html( $item['status'] ); ?></p>
 						<?php endif; ?>
 						<p><?php echo esc_html( $item['description'] ); ?></p>
-						<p><a class="button button-primary" href="<?php echo esc_url( $item['url'] ); ?>"><?php esc_html_e( 'Open', 'free-support-chat-widget-by-brane' ); ?></a></p>
+						<p><a class="button button-primary" href="<?php echo esc_url( $item['url'] ); ?>"><?php esc_html_e( 'Open', 'free-support-chat-widget' ); ?></a></p>
 					</div>
 				<?php endforeach; ?>
 			</div>
 
-			<h2><?php esc_html_e( 'Get the Brane app', 'free-support-chat-widget-by-brane' ); ?></h2>
-			<p><?php esc_html_e( 'Every conversation lands in the Brane app on your phone.', 'free-support-chat-widget-by-brane' ); ?></p>
+			<h2><?php esc_html_e( 'Get the Brane app', 'free-support-chat-widget' ); ?></h2>
+			<p><?php esc_html_e( 'Every conversation lands in the Brane app on your phone.', 'free-support-chat-widget' ); ?></p>
 			<p>
-				<a class="button" href="<?php echo esc_url( $links['ios'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'App Store', 'free-support-chat-widget-by-brane' ); ?></a>
-				<a class="button" href="<?php echo esc_url( $links['android'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google Play', 'free-support-chat-widget-by-brane' ); ?></a>
+				<a class="button" href="<?php echo esc_url( $links['ios'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'App Store', 'free-support-chat-widget' ); ?></a>
+				<a class="button" href="<?php echo esc_url( $links['android'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google Play', 'free-support-chat-widget' ); ?></a>
 			</p>
 		</div>
 		<?php
