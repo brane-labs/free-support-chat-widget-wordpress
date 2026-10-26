@@ -4,7 +4,7 @@ Tags: live chat, support chat, chat widget, customer support, contact form
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +133,9 @@ It adds one script to the footer of every page, which works with any theme or bu
 
 == Changelog ==
 
+= 1.0.4 =
+* The floating button is left off only where the page embed really shows, including embeds in templates and widgets. A shortcode written as an example, [[brane_chat_embed]], no longer hides it.
+
 = 1.0.3 =
 * The plugin's slug and text domain are now free-support-chat-widget, to match the WordPress.org plugin directory.
 
@@ -149,6 +152,9 @@ It adds one script to the footer of every page, which works with any theme or bu
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+The floating button now shows on pages that only mention the page embed shortcode.
 
 = 1.0.3 =
 New plugin folder name. If you installed an earlier zip by hand, deactivate the old copy before activating this one. Your settings carry over.

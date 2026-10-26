@@ -3,7 +3,7 @@
  * Plugin Name:       Free Support Chat Widget by Brane
  * Plugin URI:        https://github.com/brane-labs/free-support-chat-widget-wordpress
  * Description:       A free live support chat widget. Visitors message you from any page and you answer from the Brane app on your phone, with instant notifications.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Brane Labs
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BFSCW_VERSION', '1.0.3' );
+define( 'BFSCW_VERSION', '1.0.4' );
 define( 'BFSCW_FILE', __FILE__ );
 define( 'BFSCW_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BFSCW_URL', plugin_dir_url( __FILE__ ) );

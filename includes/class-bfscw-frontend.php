@@ -19,6 +19,13 @@ class BFSCW_Frontend {
 	const SRC    = self::ORIGIN . '/embed.js';
 
 	/**
+	 * Whether the page embed has rendered on this request.
+	 *
+	 * @var bool
+	 */
+	private static $embedded = false;
+
+	/**
 	 * Hooks into WordPress.
 	 */
 	public static function init() {
@@ -29,21 +36,12 @@ class BFSCW_Frontend {
 	}
 
 	/**
-	 * Whether the page being shown carries the page embed.
-	 *
-	 * @return bool
-	 */
-	private static function page_has_embed() {
-		$post = get_post();
-		return is_singular() && $post && has_shortcode( $post->post_content, 'brane_chat_embed' );
-	}
-
-	/**
 	 * Enqueues the loader when the chat is switched on.
 	 */
 	public static function enqueue() {
-		// A page that already shows the chat in its content does not need the button too.
-		if ( ! BFSCW_Settings::is_live() || self::page_has_embed() ) {
+		// A block theme renders the page before scripts are queued, so the embed
+		// may already have said it is here.
+		if ( ! BFSCW_Settings::is_live() || self::$embedded ) {
 			return;
 		}
 
@@ -220,6 +218,14 @@ class BFSCW_Frontend {
 		if ( '' === $settings['username'] ) {
 			return '';
 		}
+
+		// A page that shows the chat in its content does not need the floating
+		// button too. Removed here, when the embed really renders, so a sample
+		// written as [[brane_chat_embed]] or an embed in a template both count
+		// correctly. A classic theme queues the loader first, and prints it in
+		// the footer, after this has run; a block theme renders this first.
+		self::$embedded = true;
+		wp_dequeue_script( self::HANDLE );
 
 		$post   = get_post();
 		$origin = $post ? (string) get_permalink( $post ) : home_url( '/' );
