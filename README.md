@@ -21,6 +21,7 @@ Free Support Chat Widget by Brane is a lightweight WordPress live chat plugin ma
 - **Bottom left or bottom right.**
 - **Custom welcome message.**
 - **Live preview** on the settings page as you change things.
+- **Embed the chat in a page.** Paste `[brane_chat_embed]` into your Contact or Support page and the chat sits right in the page, full width.
 - **Use your own button.** Hide the floating chat bubble and open the chat from a menu link, a button or a shortcode.
 - **One on / off switch.** Turn the chat on or off for the whole site in one click.
 - **Lightweight and fast.** The loader is about 5KB and loads nothing else until somebody opens the chat.
@@ -50,7 +51,7 @@ You will now see a **Brane** menu in the WordPress sidebar.
 Open **Brane > Support Chat** and follow the steps on the page:
 
 1. **Get the Brane app** from the [App Store](https://apps.apple.com/app/brane-find-your-people/id1525970435) or [Google Play](https://play.google.com/store/apps/details?id=app.brane.messenger), and allow notifications so you hear about every message straight away.
-2. **Create a username with your brand**, for example `yourbrand` or `yourbrand-support`, and add your logo as the profile photo.
+2. **Create a username with your brand**, for example `yourbrand` or `yourbrandsupport` (letters and numbers only), and add your logo as the profile photo.
 3. **Paste your username** into the plugin.
 4. **Make it yours.** Choose your brand colour, light or dark, left or right, and a welcome message.
 5. **Switch it on** and click **Save changes**.
@@ -60,6 +61,23 @@ That is it. Visit your site and the support chat is there.
 ### Installing by FTP
 
 Unzip the file and upload the `free-support-chat-widget-by-brane` folder to `/wp-content/plugins/`, then activate it on the **Plugins** screen.
+
+## Embed the chat in a page
+
+Want the chat inside your Contact or Support page instead of, or as well as, a floating button? Paste this shortcode into the page, in a Shortcode block or any text block:
+
+```
+[brane_chat_embed]
+```
+
+The chat appears full width, using your username, colours and theme. It is 640 pixels tall by default. Set your own height in pixels or as a share of the screen:
+
+```
+[brane_chat_embed height="800"]
+[brane_chat_embed height="80vh"]
+```
+
+The page embed shows wherever you paste it, even with the floating chat switched off. On a page that has it, the floating button is left off so the chat is not there twice.
 
 ## Open the chat from your own button
 
@@ -77,7 +95,7 @@ These also work with the floating button switched on.
 
 | Setting | Options |
 | --- | --- |
-| Support chat | On or off |
+| Support chat | Floating chat on or off |
 | Username | Your Brane username |
 | Theme | Light or dark (visitors can switch) |
 | Position | Bottom left or bottom right |
@@ -116,7 +134,7 @@ Yes. If a plugin that delays or combines JavaScript stops the chat appearing, ex
 
 ### What data is shared?
 
-While the chat is on, your pages load the chat from `embed.brane.chat` with your username and design settings. Visitors who start a chat give an email address and date of birth, and their messages are delivered to your Brane account. See the [Brane terms and privacy policy](https://brane.app/legal/). Nothing is sent while the chat is switched off.
+While the floating chat is on, your pages load the chat from `embed.brane.chat` with your username and design settings. Visitors who start a chat give an email address and date of birth, and their messages are delivered to your Brane account. See the [Brane terms and privacy policy](https://brane.app/legal/). Pages carrying the page embed load the chat panel from the same place. Nothing is sent while the floating chat is off and no page carries the page embed.
 
 ## Requirements
 

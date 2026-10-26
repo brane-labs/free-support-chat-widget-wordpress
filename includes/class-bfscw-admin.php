@@ -83,7 +83,7 @@ class BFSCW_Admin {
 				'defaultWelcome' => __( 'This is not a chatbot, you are about to message a real person.', 'free-support-chat-widget-by-brane' ),
 				/* translators: %s: a Brane username. */
 				'chatWith'       => __( 'Chat with %s', 'free-support-chat-widget-by-brane' ),
-				'yourUsername'   => __( 'your-username', 'free-support-chat-widget-by-brane' ),
+				'yourUsername'   => __( 'yourbrand', 'free-support-chat-widget-by-brane' ),
 				'on'             => __( 'On. Save changes and the chat appears on your site.', 'free-support-chat-widget-by-brane' ),
 				'off'            => __( 'Off. Save changes and the chat is hidden from your site.', 'free-support-chat-widget-by-brane' ),
 				'needsUsername'  => __( 'Add your username first.', 'free-support-chat-widget-by-brane' ),
@@ -167,7 +167,7 @@ class BFSCW_Admin {
 
 						<section class="bfscw-card">
 							<h2><span class="bfscw-step">2</span><?php esc_html_e( 'Choose a username with your brand', 'free-support-chat-widget-by-brane' ); ?></h2>
-							<p><?php esc_html_e( 'Sign up in the app and pick a username your customers will recognise, for example yourbrand or yourbrand-support. It is shown at the top of the chat.', 'free-support-chat-widget-by-brane' ); ?></p>
+							<p><?php esc_html_e( 'Sign up in the app and pick a username your customers will recognise, for example yourbrand or yourbrandsupport (letters and numbers only). It is shown at the top of the chat.', 'free-support-chat-widget-by-brane' ); ?></p>
 							<p><?php esc_html_e( 'Add your logo as the profile photo so visitors know they are talking to you.', 'free-support-chat-widget-by-brane' ); ?></p>
 						</section>
 
@@ -175,7 +175,7 @@ class BFSCW_Admin {
 							<h2><span class="bfscw-step">3</span><label for="bfscw-username"><?php esc_html_e( 'Paste your username here', 'free-support-chat-widget-by-brane' ); ?></label></h2>
 							<div class="bfscw-username">
 								<span class="bfscw-at" aria-hidden="true">@</span>
-								<input type="text" id="bfscw-username" class="regular-text" name="<?php self::name( 'username' ); ?>" value="<?php echo esc_attr( $s['username'] ); ?>" placeholder="<?php esc_attr_e( 'your-username', 'free-support-chat-widget-by-brane' ); ?>" autocomplete="off" spellcheck="false" />
+								<input type="text" id="bfscw-username" class="regular-text" name="<?php self::name( 'username' ); ?>" value="<?php echo esc_attr( $s['username'] ); ?>" placeholder="<?php esc_attr_e( 'yourbrand', 'free-support-chat-widget-by-brane' ); ?>" autocomplete="off" spellcheck="false" />
 							</div>
 							<p class="description"><?php esc_html_e( 'Exactly as it appears in the app. You can paste your profile link too.', 'free-support-chat-widget-by-brane' ); ?></p>
 						</section>
@@ -273,9 +273,20 @@ class BFSCW_Admin {
 								<input type="hidden" name="<?php self::name( 'enabled' ); ?>" value="0" />
 								<input type="checkbox" id="bfscw-enabled" name="<?php self::name( 'enabled' ); ?>" value="1" <?php checked( $s['enabled'] ); ?> />
 								<span class="bfscw-slider" aria-hidden="true"></span>
-								<span class="bfscw-switch-label"><?php esc_html_e( 'Show the support chat on my site', 'free-support-chat-widget-by-brane' ); ?></span>
+								<span class="bfscw-switch-label"><?php esc_html_e( 'Show the floating support chat on every page', 'free-support-chat-widget-by-brane' ); ?></span>
 							</label>
 							<p class="bfscw-switch-state" id="bfscw-switch-state" aria-live="polite"></p>
+						</section>
+
+						<section class="bfscw-card">
+							<h2><span class="bfscw-step"><span class="dashicons dashicons-editor-code" aria-hidden="true"></span></span><?php esc_html_e( 'Embed on a page', 'free-support-chat-widget-by-brane' ); ?></h2>
+							<p><?php esc_html_e( 'Put the chat right inside a page, full width, for example on your Contact or Support page. Paste this shortcode into the page, in a Shortcode block or any text block:', 'free-support-chat-widget-by-brane' ); ?></p>
+							<p class="bfscw-copy-row">
+								<code id="bfscw-embed-code">[brane_chat_embed]</code>
+								<button type="button" class="button" data-copy="#bfscw-embed-code" data-copied="<?php esc_attr_e( 'Copied', 'free-support-chat-widget-by-brane' ); ?>"><?php esc_html_e( 'Copy', 'free-support-chat-widget-by-brane' ); ?></button>
+							</p>
+							<p class="description"><?php esc_html_e( 'It uses your username, colours and theme from above. It is 640 pixels tall unless you set a height, for example [brane_chat_embed height="800"] or [brane_chat_embed height="80vh"].', 'free-support-chat-widget-by-brane' ); ?></p>
+							<p class="description"><?php esc_html_e( 'The page embed shows wherever you paste it, even with the floating chat switched off. On a page that has it, the floating button is left off so the chat is not there twice.', 'free-support-chat-widget-by-brane' ); ?></p>
 						</section>
 
 						<?php submit_button( __( 'Save changes', 'free-support-chat-widget-by-brane' ) ); ?>

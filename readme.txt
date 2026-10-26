@@ -34,13 +34,18 @@ Free Support Chat Widget by Brane puts a real live chat on your website in about
 * Bottom left or bottom right
 * Your own welcome message
 * A floating chat button, or your own button, menu link or shortcode
+* Or embed the chat right inside a page, full width, with `[brane_chat_embed]`
 * A live preview on the settings page as you change things
 
 = Set up in three steps =
 
 1. Install the free Brane app from the App Store or Google Play and allow notifications.
-2. Create a username with your brand, for example yourbrand-support.
+2. Create a username with your brand, for example yourbrandsupport.
 3. Paste the username into **Brane > Support Chat**, pick your colours and switch the chat on.
+
+= Embed the chat in a page =
+
+Paste `[brane_chat_embed]` into your Contact or Support page and the chat appears in the page, full width. It is 640 pixels tall by default, or set a height with `[brane_chat_embed height="800"]` or `[brane_chat_embed height="80vh"]`. It shows wherever you paste it, even with the floating chat switched off, and the floating button is left off on that page.
 
 = Open the chat from your own button =
 
@@ -60,7 +65,9 @@ When a visitor opens the chat, the chat panel loads from `embed.brane.chat`. If 
 
 * Terms of service and privacy policy: https://brane.app/legal/
 
-No data is sent to Brane while the chat is switched off.
+The page embed (`[brane_chat_embed]`) loads the chat panel from `embed.brane.chat` in an iframe on the pages where you paste it, with the same settings and the address of that page.
+
+No data is sent to Brane while the floating chat is switched off and no page carries the page embed.
 
 == Installation ==
 
@@ -94,6 +101,10 @@ No. Every message reaches you, a real person, and the chat says so.
 = How do I get notified about new messages? =
 
 Allow notifications when the Brane app asks. You then get a notification on your phone for every new message.
+
+= Can I put the chat inside a page instead? =
+
+Yes. Paste `[brane_chat_embed]` into any page and the chat appears there, full width.
 
 = Can I hide the floating button? =
 

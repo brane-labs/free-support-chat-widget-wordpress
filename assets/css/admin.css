@@ -468,3 +468,21 @@
 	font-size: 12px;
 	font-weight: 600;
 }
+
+.bfscw-step .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.bfscw-copy-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.bfscw-copy-row code {
+	font-size: 14px;
+	padding: 6px 10px;
+}

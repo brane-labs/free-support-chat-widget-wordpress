@@ -31,7 +31,7 @@
 		preview[ 0 ].style.setProperty( '--bfscw-secondary', color( 'bfscw-secondary', '#e5484d' ) );
 
 		$( '#bfscw-mock-name' ).text(
-			( i18n.chatWith || 'Chat with %s' ).replace( '%s', username || i18n.yourUsername || 'your-username' )
+			( i18n.chatWith || 'Chat with %s' ).replace( '%s', username || i18n.yourUsername || 'yourbrand' )
 		);
 		$( '#bfscw-mock-welcome' ).text( welcome || i18n.defaultWelcome || '' );
 		$( '.bfscw-mock-launcher' ).attr( 'title', $( '#bfscw-label' ).val() || i18n.defaultLabel || '' );
@@ -69,6 +69,26 @@
 
 		$( '.bfscw-mock-launcher, .bfscw-mock-own' ).on( 'click', function () {
 			$( '#bfscw-preview-toggle' ).trigger( 'click' );
+		} );
+
+		$( '[data-copy]' ).on( 'click', function () {
+			var button = $( this );
+			var text = $( button.data( 'copy' ) ).text();
+			var done = function () {
+				var label = button.text();
+				button.text( button.data( 'copied' ) );
+				setTimeout( function () {
+					button.text( label );
+				}, 1500 );
+			};
+			if ( navigator.clipboard && window.isSecureContext ) {
+				navigator.clipboard.writeText( text ).then( done );
+			} else {
+				var field = $( '<textarea>' ).val( text ).appendTo( 'body' ).trigger( 'select' );
+				document.execCommand( 'copy' );
+				field.remove();
+				done();
+			}
 		} );
 
 		render();

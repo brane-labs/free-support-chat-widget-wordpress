@@ -53,7 +53,7 @@ class BFSCW_Settings {
 	}
 
 	/**
-	 * Cleans a username as pasted: drops an @, a profile link and stray spaces.
+	 * Cleans a username as pasted: drops an @, a profile link and anything a username cannot contain.
 	 *
 	 * @param string $value Raw input.
 	 * @return string
@@ -62,7 +62,8 @@ class BFSCW_Settings {
 		$value = trim( (string) $value );
 		$value = preg_replace( '#^https?://[^/]+/u/#i', '', $value );
 		$value = ltrim( $value, '@' );
-		$value = preg_replace( '/[^A-Za-z0-9._-]/', '', $value );
+		// Brane usernames are lowercase letters and numbers only.
+		$value = strtolower( preg_replace( '/[^A-Za-z0-9]/', '', $value ) );
 		return substr( $value, 0, 64 );
 	}
 
