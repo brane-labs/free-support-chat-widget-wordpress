@@ -84,8 +84,11 @@ class BFSCW_Admin {
 				/* translators: %s: a Brane username. */
 				'chatWith'       => __( 'Chat with %s', 'free-support-chat-widget-by-brane' ),
 				'yourUsername'   => __( 'yourbrand', 'free-support-chat-widget-by-brane' ),
-				'on'             => __( 'On. Save changes and the chat appears on your site.', 'free-support-chat-widget-by-brane' ),
-				'off'            => __( 'Off. Save changes and the chat is hidden from your site.', 'free-support-chat-widget-by-brane' ),
+				'savedOn'        => BFSCW_Settings::is_live(),
+				'on'             => __( 'On. The floating chat is live on your site.', 'free-support-chat-widget-by-brane' ),
+				'off'            => __( 'Off. The floating chat is not on your site.', 'free-support-chat-widget-by-brane' ),
+				'saveToTurnOn'   => __( 'Click Save changes to put the chat on your site.', 'free-support-chat-widget-by-brane' ),
+				'saveToTurnOff'  => __( 'Click Save changes to take the chat off your site.', 'free-support-chat-widget-by-brane' ),
 				'needsUsername'  => __( 'Add your username first.', 'free-support-chat-widget-by-brane' ),
 			)
 		);

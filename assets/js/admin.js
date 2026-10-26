@@ -42,6 +42,8 @@
 		var state = $( '#bfscw-switch-state' );
 		if ( enabled && ! username ) {
 			state.text( i18n.needsUsername || '' ).attr( 'data-state', 'warn' );
+		} else if ( enabled !== !! i18n.savedOn ) {
+			state.text( enabled ? i18n.saveToTurnOn || '' : i18n.saveToTurnOff || '' ).attr( 'data-state', 'warn' );
 		} else {
 			state.text( enabled ? i18n.on || '' : i18n.off || '' ).attr( 'data-state', enabled ? 'on' : 'off' );
 		}

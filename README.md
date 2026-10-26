@@ -2,7 +2,7 @@
 
 **A free live chat plugin for WordPress websites. Visitors message you from any page, and you reply from the Brane app on your phone.** No monthly fee, no seat limits, no chatbot. Just a real support chat for your business, shop, club or blog.
 
-Free Support Chat Widget by Brane is a lightweight WordPress live chat plugin made by [Brane Labs](https://brane.app). It adds a customer support chat button to every page of your site, with your brand colour, a light or dark theme and the corner of your choice. Every message lands in the free Brane app on iPhone and Android, with a push notification the moment it arrives, so you can answer customers from anywhere.
+Free Support Chat Widget by Brane is a lightweight WordPress live chat plugin made by [Brane Labs](https://brane.app/business/). It adds a customer support chat button to every page of your site, with your brand colour, a light or dark theme and the corner of your choice. Every message lands in the free Brane app on iPhone and Android, with a push notification the moment it arrives, so you can answer customers from anywhere.
 
 - **Download:** [latest release zip](https://github.com/brane-labs/free-support-chat-widget-wordpress/releases/latest)
 - **WordPress.org plugin directory:** coming soon
@@ -152,4 +152,4 @@ The installable zip is written to `dist/free-support-chat-widget-by-brane.zip`. 
 
 ## License
 
-GPLv2 or later. Made by [Brane Labs](https://brane.app).
+GPLv2 or later. Made by [Brane Labs](https://brane.app/business/).

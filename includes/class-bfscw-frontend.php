@@ -108,7 +108,9 @@ class BFSCW_Frontend {
 			return $tag;
 		}
 
-		$extra = ' defer';
+		// Keeps optimisation plugins (LiteSpeed, WP Rocket, Cloudflare Rocket Loader)
+		// from delaying, combining or rewriting the loader, which reads its own tag.
+		$extra = ' defer data-no-optimize="1" data-no-defer="1" data-cfasync="false" nowprocket';
 		foreach ( self::attributes( BFSCW_Settings::get() ) as $name => $value ) {
 			$extra .= sprintf( ' %s="%s"', $name, esc_attr( $value ) );
 		}

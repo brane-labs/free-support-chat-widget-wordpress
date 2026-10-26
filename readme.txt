@@ -4,7 +4,7 @@ Tags: live chat, support chat, chat widget, customer support, contact form
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,10 +133,19 @@ It adds one script to the footer of every page, which works with any theme or bu
 
 == Changelog ==
 
+= 1.0.1 =
+* Page caches are cleared when the settings are saved, so the chat appears straight away.
+* The chat is kept out of JavaScript delay and combine settings in caching plugins.
+* The on / off switch says whether the chat is live or needs saving.
+* Embed the chat in a page with [brane_chat_embed].
+
 = 1.0.0 =
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Fixes the chat not appearing on sites with a page cache, and adds the page embed.
 
 = 1.0.0 =
 First release.
